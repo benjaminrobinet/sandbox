@@ -1,0 +1,14 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#test-three {
+  overflow: hidden;
+}
+
+#test-three canvas {
+  display: block;
+}
+
