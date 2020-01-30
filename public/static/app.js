@@ -254,6 +254,9 @@ function () {
           progress: {
             value: 0
           },
+          angle: {
+            value: 0.5
+          },
           texture1: {
             type: 't',
             value: null
@@ -282,6 +285,7 @@ function () {
       var folder = this.gui.addFolder('Debug');
       folder.add(this.material.uniforms.progress, 'value').name('progress').step(0.001).min(0).max(1);
       folder.add(this.material.uniforms.gradientScale, 'value').name('gradient scale').step(0.001).min(0).max(1);
+      folder.add(this.material.uniforms.angle, 'value').name('gradient angle').step(0.001).min(0).max(1);
       folder.open();
     }
   }, {
@@ -325,7 +329,7 @@ function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("#define GLSLIFY 1\nuniform float time;\nuniform vec2 resolution;\nuniform sampler2D texture1;\nuniform sampler2D texture2;\nuniform float progress;\nuniform float gradientScale;\nvarying vec2 vUv;\n\n#include <common>\n\nvoid main(){\n\n    float _tmp = smoothstep(0. + progress - gradientScale * 0.5, gradientScale * 0.5 + progress, vUv.x);\n    vec4 finalTexture = (_tmp * texture2D(texture1, vUv)) + ((1. - _tmp) * texture2D(texture2, vUv));\n    gl_FragColor = finalTexture;\n}");
+/* harmony default export */ __webpack_exports__["default"] = ("#define GLSLIFY 1\nuniform float time;\nuniform vec2 resolution;\nuniform sampler2D texture1;\nuniform sampler2D texture2;\nuniform float progress;\nuniform float gradientScale;\nuniform float angle;\nvarying vec2 vUv;\n\n#include <common>\n\nvoid main(){\n    float _tmp = smoothstep(0. + progress - gradientScale * 0.5, gradientScale * 0.5 + progress, vUv.x);\n    vec4 finalTexture = (_tmp * texture2D(texture1, vUv)) + ((1. - _tmp) * texture2D(texture2, vUv));\n    gl_FragColor = finalTexture;\n}");
 
 /***/ }),
 

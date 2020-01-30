@@ -42,6 +42,7 @@ class Renderer {
             uniforms: {
                 gradientScale: {value: 0.1},
                 progress: {value: 0},
+                angle: {value: 0.5},
                 texture1: {type: 't', value: null},
                 texture2: {type: 't', value: null},
                 time: {value: 0}
@@ -61,6 +62,7 @@ class Renderer {
         let folder = this.gui.addFolder('Debug');
         folder.add(this.material.uniforms.progress, 'value').name('progress').step(0.001).min(0).max(1);
         folder.add(this.material.uniforms.gradientScale, 'value').name('gradient scale').step(0.001).min(0).max(1);
+        folder.add(this.material.uniforms.angle, 'value').name('gradient angle').step(0.001).min(0).max(1);
         folder.open();
     }
 
