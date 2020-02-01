@@ -16,4 +16,12 @@ class IndexController extends AbstractController
             'controller_name' => 'IndexController',
         ]);
     }
+
+    /**
+     * @Route("/mousemask", name="mouse_mask")
+     */
+    public function mouseMask()
+    {
+        return $this->render('index/mousemask.html.twig');
+    }
 }

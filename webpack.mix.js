@@ -13,7 +13,12 @@ let mix = require('laravel-mix');
 
 mix.js('dev/app.js', 'public/static');
 mix.sass('dev/app.scss', 'public/static');
-mix.browserSync('0.0.0.0:8000');
+mix.browserSync({
+    proxy: '0.0.0.0:8000',
+    open: false
+});
+mix.disableNotifications();
+mix.sourceMaps();
 mix.webpackConfig({
     module: {
         rules: [

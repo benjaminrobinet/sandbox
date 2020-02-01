@@ -1,4 +1,4 @@
 import {Kernel} from "./js/Kernel";
 document.addEventListener('DOMContentLoaded', () => {
-    new Kernel();
+    const kernel = new Kernel();
 });

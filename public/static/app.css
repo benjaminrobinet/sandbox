@@ -12,3 +12,11 @@ body {
   display: block;
 }
 
+#mouse-mask {
+  overflow: hidden;
+}
+
+#mouse-mask canvas {
+  display: block;
+}
+
