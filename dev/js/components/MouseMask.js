@@ -35,7 +35,8 @@ class MouseMask {
     get focusFilter() {
         if (!this._focusFilter) {
             this._focusFilter = new PIXI.Filter(null, fragmentShader, {
-                mousePosition: new PIXI.Point()
+                mousePosition: new PIXI.Point(),
+                time: 0
             });
         }
 
@@ -44,6 +45,7 @@ class MouseMask {
 
     render(){
         this.focusFilter.uniforms.mousePosition.copyFrom(this.pixi.renderer.plugins.interaction.mouse.global);
+        this.focusFilter.uniforms.time = performance.now();
     }
 
     layout() {
