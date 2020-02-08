@@ -1,3 +1,6 @@
+public/static/app.css
+public/static/app.js
+
 
 ###> symfony/framework-bundle ###
 /.env.local
