@@ -24,4 +24,12 @@ class IndexController extends AbstractController
     {
         return $this->render('index/mousemask.html.twig');
     }
+
+    /**
+     * @Route("/dna", name="dna")
+     */
+    public function dna()
+    {
+        return $this->render('index/dna.html.twig');
+    }
 }
